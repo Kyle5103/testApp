@@ -1,0 +1,33 @@
+<script src="js/controllers/dataController.js"></script>
+<div class="row" ng-controller="Hello">
+    <div class="col-lg-10">
+        <rd-widget>
+            <rd-widget-header icon="fa-tasks" title="Invoices">
+                <a href="#/tables">Manage</a>
+            </rd-widget-header>
+            <rd-widget-body classes="medium no-padding">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <tbody>
+                        <th>Invoice Number</th>
+                        <th>Company Name</th>
+                        <th>Type of Work</th>
+                        <th>Cost</th>
+                        <th>Comments</th>
+                        <th>Status</th>
+                        <tr ng-repeat="inv in invoices">
+                            <td id="invoiceNo_{{inv.invoiceNo}}"><a ng-click="setInvoice(inv.invoiceNo)" href="#/editInvoice">{{inv.invoiceNo}} </a></td>
+                            <td id="companyName_{{inv.invoiceNo}}">{{inv.companyName}}</td>
+                            <td id="typeOfWork_{{inv.invoiceNo}}">{{inv.typeOfWork}}</td>
+                            <td id="price_{{inv.invoiceNo}}">{{inv.price}}</td>
+                            <td id="comment_{{inv.invoiceNo}}">{{inv.comment}}</td>
+                            <td id="status_{{inv.invoiceNo}}">{{inv.status}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </rd-widget-body>
+
+        </rd-widget>
+    </div>
+</div>

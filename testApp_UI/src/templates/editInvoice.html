@@ -1,0 +1,43 @@
+<script src="js/controllers/dataController.js"></script>
+<div class="row" ng-controller="Hello">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label>Invoice to Update: </label>
+            <select ng-model="selectedInvoice"
+                    ng-options="inv.invoiceNo for inv in invoices"></select>
+        </div>
+        <form role="form">
+            <div class="form-group" id="invoiceNo_add">
+                Invoice Number<br>
+                <input class="form-control" ng-model="selectedInvoice.invoiceNo" ng-disabled="true">
+            </div>
+            <div class="form-group" id="compName_add">
+                Company Name<br>
+                <input class="form-control" ng-model="selectedInvoice.companyName">
+            </div>
+            <div class="form-group" id="typeofwork_add">
+                Type of Work<br>
+                <input class="form-control" ng-model="selectedInvoice.typeOfWork">
+            </div>
+            <div class="form-group" id="cost_add">
+                Cost<br>
+                <input class="form-control" ng-model="selectedInvoice.price">
+            </div>
+            <div class="form-group" id="status_add">
+                Status<br>
+                <input class="form-control" ng-model="selectedInvoice.status">
+            </div>
+            <div class="form-group" id="comments_add">
+                Comments<br>
+                <input class="text" style="width: 300px;" ng-model="selectedInvoice.comment">
+            </div>
+
+            <a href="">
+                <button type="submit" class="btn btn-default" ng-click="updateInvoice(selectedInvoice)">Save</button>
+            </a>
+            <a href="#"><button type="button" class="btn btn-default">Cancel</button>
+            </a>
+        </form>
+
+    </div>
+</div>
