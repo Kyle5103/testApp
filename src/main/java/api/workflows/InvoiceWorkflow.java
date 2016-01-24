@@ -42,7 +42,7 @@ public class InvoiceWorkflow {
 
     public InvoiceResource createInvoice(InvoiceResource invoice) throws Exception {
         if(!validateInvoice(invoice)){
-            throw new Exception("Invalid resource");
+            throw new Exception("Invalid resource. All fields except for description must be filled. ");
         }
         if (jedis.get(SINGLE_INV_KEY + invoice.getInvoiceNo()) != null) {
             throw new Exception("Invoice number has already been created. ");
@@ -56,7 +56,7 @@ public class InvoiceWorkflow {
 
     public InvoiceResource updateInvoice(String id, InvoiceResource updatedInvoice) throws Exception {
         if(!validateInvoice(updatedInvoice)){
-            throw new Exception("Invalid resource");
+            throw new Exception("Invalid resource. All fields except for description must be filled. ");
         }
         String invoiceKey = SINGLE_INV_KEY + id;
         String blob = jedis.get(invoiceKey);
@@ -85,7 +85,8 @@ public class InvoiceWorkflow {
                 invoice.getCompanyName() == null ||
                 invoice.getPrice() == null ||
                 invoice.getStatus() == null ||
-                invoice.getTypeOfWork() == null){
+                invoice.getTypeOfWork() == null ||
+                invoice.getDueDate() == null){
             return false;
         }else{
             return true;

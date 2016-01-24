@@ -7,6 +7,7 @@ public class InvoiceResource {
     private String status;
     private String price;
     private String comment;
+    private String dueDate;
 
     public String getInvoiceNo() {
         return invoiceNo;
@@ -55,5 +56,13 @@ public class InvoiceResource {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 }
