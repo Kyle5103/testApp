@@ -1,9 +1,6 @@
 api/Application.class
-RedisTest.class
 api/workflows/InvoiceWorkflow.class
 api/InvoiceComparator.class
 api/models/InvoiceResource.class
-api/redis/RedisSetup.class
 api/controllers/InvoiceController.class
-api/models/UserResource.class
-RandomObject.class
+api/redis/RedisSetup.class
